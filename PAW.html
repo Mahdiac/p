@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Livre de Recettes 😁</title>
+    <link rel="stylesheet" href="Paw.css">
+    <link rel="icon" href="paw.avif">
+    <script src="paw.js"></script>
+
+</head>
+<body>
+    <h1>Mon Livre de Recettes</h1>
+
+    <!-- Bouton pour afficher la boîte modale -->
+    <button id="show-form-button" onclick="toggleModal()">Ajouter une Recette</button>
+
+    <!-- Boîte modale pour ajouter ou modifier une recette -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal()">&times;</span> <!-- Bouton "X" -->
+            <h2 id="modal-title">Ajouter une Recette</h2>
+            <form onsubmit="addOrUpdateRecipe(); return false;">
+                <input type="hidden" id="recipe-index" value="">
+                <label for="recipe-name">Nom de la recette :</label>
+                <input type="text" id="recipe-name" required><br><br>
+
+                <label for="ingredients">Ingrédients :</label>
+                <textarea id="ingredients" required></textarea><br><br>
+
+                <label for="instructions">Instructions :</label>
+                <textarea id="instructions" required></textarea><br><br>
+
+                <input type="submit" value="Enregistrer la recette">
+            </form>
+        </div>
+    </div>
+
+    <!-- Liste des recettes affichées -->
+    <div id="recipe-list">
+        <!-- Les recettes seront affichées ici -->
+    </div>
+
+</body>
+</html>
